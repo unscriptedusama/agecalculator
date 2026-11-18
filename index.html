@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate your exact age in years, months, days, and discover your next birthday.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Agewise — Age Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="#" aria-label="Agewise home"><span class="brand-mark">A</span> agewise<span class="brand-dot">.</span></a>
+      <span class="top-note"><span class="live-dot"></span> Your time, beautifully measured</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE AGE CALCULATOR <span class="eyebrow-line"></span></div>
+      <h1>Every moment<br>has a <span>meaning.</span></h1>
+      <p class="hero-copy">Discover your exact age and see how much time has passed since your very first day.</p>
+    </section>
+
+    <section class="calculator-card" aria-labelledby="calculator-title">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">LET'S FIND OUT</p>
+          <h2 id="calculator-title">When were you born?</h2>
+        </div>
+        <div class="calendar-icon" aria-hidden="true">▦</div>
+      </div>
+
+      <form id="age-form" novalidate>
+        <label for="birth-date">Your date of birth</label>
+        <div class="date-field-wrap">
+          <input id="birth-date" name="birth-date" type="date" required>
+          <span class="date-hint">Select your birthday</span>
+        </div>
+        <p id="error-message" class="error-message" role="alert"></p>
+        <button class="calculate-button" type="submit">Calculate my age <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <div id="results" class="results" aria-live="polite" hidden>
+        <div class="result-topline"><span class="result-check">✓</span> YOUR EXACT AGE</div>
+        <div class="age-grid">
+          <div class="age-unit"><strong id="years">—</strong><span>Years</span></div>
+          <div class="age-unit"><strong id="months">—</strong><span>Months</span></div>
+          <div class="age-unit"><strong id="days">—</strong><span>Days</span></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><span class="stat-label">TOTAL DAYS</span><strong id="total-days">—</strong></div>
+          <div class="stat"><span class="stat-label">TOTAL WEEKS</span><strong id="total-weeks">—</strong></div>
+          <div class="stat"><span class="stat-label">NEXT BIRTHDAY</span><strong id="birthday-countdown">—</strong></div>
+        </div>
+        <p id="birthday-message" class="birthday-message"></p>
+        <button id="reset-button" class="reset-button" type="button">Calculate another age ↻</button>
+      </div>
+    </section>
+
+    <footer><span>AGEWISE © <span id="year-now"></span></span><span>Made to make every moment count.</span></footer>
+  </main>
+</body>
+</html>
